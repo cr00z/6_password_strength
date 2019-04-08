@@ -4,8 +4,6 @@ Password Strength Calculator is the script to determine the strength of your pas
 
 It gives him a rating from 1 to 10: 1 - very weak, 10 - strong and recommended to use.
 
-Strong 
-
 Criteria for evaluation:
 
 * the use of both upper-case and lower-case letters (case sensitivity)
@@ -16,7 +14,9 @@ Criteria for evaluation:
 
 # Quickstart
 
-To work, you need a list of weak passwords, you can take it at [SecLists](https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials). Place the list next to the script in the passwords.txt file or specify the path to it using the --weak-list parameter.
+To work, you need a list of weak passwords, you can take it at [SecLists](https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials).
+
+Place the list file next to the script in the passwords.txt file or specify the path to it using the --weak-list parameter.
 
 The script requires an installed Python interpreter version 3.5, no additional packages required.
 
