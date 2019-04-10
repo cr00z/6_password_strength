@@ -1,6 +1,7 @@
 import re
 import os
 import argparse
+import getpass
 
 
 MIN_PW_STRENGTH = 1
@@ -99,13 +100,15 @@ if __name__ == '__main__':
     if weak_passwords_list is None:
         print('Weak password list file not found, weak list test not supported')
     if args.test_pass == '':
-        tested_password = input("Input your password: ")
+        tested_password = getpass.getpass("Input your password: ")
     else:
         tested_password = args.test_pass
     password_strength = get_password_strength(tested_password, weak_passwords_list)
     if args.verbose:
-        print("Password strength: {}{} [{}/10]".format('+' * password_strength,
-                                                       '-' * (10-password_strength),
-                                                       password_strength))
+        print("Password strength: {}{} [{}/10]".format(
+            '+' * password_strength,
+            '-' * (10-password_strength),
+            password_strength)
+        )
     else:
         print(password_strength)
