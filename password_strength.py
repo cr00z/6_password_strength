@@ -58,9 +58,12 @@ def check_password_in_weak_list(password, weak_passwords_list):
 
 
 def get_password_strength(password, weak_password_list):
-    pw_strength = get_password_len_strength(password)
-    pw_strength += get_password_symbols_correction(password)
-    pw_strength += get_password_mask_correction(password)
+    pw_strength_components = [
+        get_password_len_strength(password),
+        get_password_symbols_correction(password),
+        get_password_mask_correction(password)
+    ]
+    pw_strength = sum(pw_strength_components)
     pw_is_weak = False
     if weak_passwords_list is not None:
         pw_is_weak = check_password_in_weak_list(password, weak_password_list)
